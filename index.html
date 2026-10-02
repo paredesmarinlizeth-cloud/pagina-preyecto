@@ -30,9 +30,11 @@
     touch-action: pan-x pan-y;   /* permite arrastrar en ambas direcciones */
   }
 
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth; max-width:100%;}
   body{
     margin:0;
+    max-width:100%;
+    overflow-x:clip;
     color:var(--ink);
     font-family:'Sora', sans-serif;
     -webkit-font-smoothing:antialiased;
@@ -295,9 +297,9 @@
     .header-inner{ padding:12px 16px; flex-wrap:wrap; }
     .logo-text{ font-size:1.05rem; }
     .cart-btn{ padding:9px 14px; font-size:0.84rem; }
-    /* Hero en celular: la imagen se encoge y se ve completa */
-    .hero{ padding:0; min-height:0; display:block; }
-    .hero-title-img{ position:static; height:auto; object-fit:contain; }
+    /* Hero en celular: mantiene su altura; la imagen solo se recorta por los lados */
+    .hero{ padding:0; min-height:620px; margin-left:16px; margin-right:16px; }
+    .hero-title-img{ object-position:center top; }
     .hero-content{ padding:16px 16px 20px; }
     .hero-feature{ padding:10px 6px; }
     .hero-feature img{ height:40px; width:40px; }
@@ -421,7 +423,7 @@
       </div>
     </div>
   </div>
-  <div class="footer-bottom">© 2026 Dulce Alivio. Este sitio es 100% confiable..</div>
+  <div class="footer-bottom">© 2026 Dulce Alivio. Este sitio es 100% confiable.</div>
 </footer>
 
 <script>
